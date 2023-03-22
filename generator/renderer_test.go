@@ -24,7 +24,7 @@ import (
 
 	surface "github.com/google/gnostic/surface"
 
-	"github.com/google/gnostic-grpc/utils"
+	"github.com/thlib/gnostic-grpc/utils"
 )
 
 const (

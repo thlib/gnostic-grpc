@@ -11,11 +11,11 @@ OpenAPI description.
 ![alt text](https://raw.githubusercontent.com/google/gnostic-grpc/master/examples/images/end-to-end-envoy.png "gRPC with Transcoding")
 
 #### Prerequisite
-Install [gnostic](https://github.com/google/gnostic), [gnostic-grpc](https://github.com/google/gnostic-grpc),
+Install [gnostic](https://github.com/google/gnostic), [gnostic-grpc](https://github.com/thlib/gnostic-grpc),
 [go plugin for protoc](https://github.com/golang/protobuf/protoc-gen-go), and [gRPC](https://grpc.io/).
 
     go get -u github.com/google/gnostic
-    go get -u github.com/google/gnostic-grpc
+    go get -u github.com/thlib/gnostic-grpc
     go get -u github.com/golang/protobuf/protoc-gen-go
     go get -u google.golang.org/grpc
     

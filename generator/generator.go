@@ -27,7 +27,7 @@ import (
 	surface_v1 "github.com/google/gnostic/surface"
 	"google.golang.org/genproto/googleapis/api/annotations"
 
-	"github.com/google/gnostic-grpc/utils"
+	"github.com/thlib/gnostic-grpc/utils"
 )
 
 // Gathers all symbolic references we generated in recursive calls.
@@ -211,7 +211,7 @@ func getNamesOfDependenciesThatWillBeImported(dependencies []*dpb.FileDescriptor
 	// At last, we need to add the dependencies to the FileDescriptorProto in order to get them rendered.
 	for _, fd := range dependencies {
 		if isEmptyDependency(*fd.Name) && shouldAddEmptyDependency(methods) {
-			// Reference: https://github.com/google/gnostic-grpc/issues/8
+			// Reference: https://github.com/thlib/gnostic-grpc/issues/8
 			names = append(names, *fd.Name)
 			continue
 		}
