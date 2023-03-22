@@ -14,7 +14,6 @@
 package generator
 
 import (
-	"regexp"
 	"strconv"
 	"strings"
 
@@ -271,7 +270,6 @@ func protoFieldName(originalName string, t string) string {
 	if len(name) == 0 {
 		name = CleanName(t)
 	}
-	name = toSnakeCase(name)
 	return name
 }
 
@@ -279,7 +277,6 @@ func protoFieldName(originalName string, t string) string {
 // https://developers.google.com/protocol-buffers/docs/style#message-and-field-names
 func protoTypeName(originalName string) (name string) {
 	name = CleanName(originalName)
-	name = toCamelCase(name)
 	return name
 }
 
@@ -296,22 +293,4 @@ func CleanName(name string) string {
 	name = strings.Replace(name, "/", "_", -1)
 	name = strings.Replace(name, "$", "", -1)
 	return name
-}
-
-// toCamelCase converts str to CamelCase
-func toCamelCase(str string) string {
-	var link = regexp.MustCompile("(^[A-Za-z])|_([A-Za-z])")
-	return link.ReplaceAllStringFunc(str, func(s string) string {
-		return strings.ToUpper(strings.Replace(s, "_", "", -1))
-	})
-}
-
-// toSnakeCase converts str to snake_case
-func toSnakeCase(str string) string {
-	var matchFirstCap = regexp.MustCompile("(.)([A-Z][a-z]+)")
-	var matchAllCap = regexp.MustCompile("([a-z0-9])([A-Z])")
-
-	snake := matchFirstCap.ReplaceAllString(str, "${1}_${2}")
-	snake = matchAllCap.ReplaceAllString(snake, "${1}_${2}")
-	return strings.ToLower(snake)
 }
