@@ -22,4 +22,6 @@ require (
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 )
 
-replace github.com/googleapis/gnostic-grpc => github.com/thlib/gnostic-grpc v0.1.1.1
+replace github.com/googleapis/gnostic-grpc => github.com/thlib/gnostic-grpc v0.1.2
+
+replace github.com/google/gnostic-grpc => github.com/thlib/gnostic-grpc v0.1.2
