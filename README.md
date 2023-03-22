@@ -2,6 +2,8 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/thlib/gnostic-grpc)](https://goreportcard.com/report/github.com/thlib/gnostic-grpc)
 [![Test Coverage](https://codecov.io/gh/google/gnostic-grpc/branch/master/graph/badge.svg)](https://codecov.io/gh/google)
 
+# broken fork, do not use.
+
 # gnostic gRPC plugin
 
 This plugin has two functionalities:
