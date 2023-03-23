@@ -9,11 +9,11 @@ import "google/protobuf/descriptor.proto";
 import "google/protobuf/empty.proto";
 
 message Parameter1 {
-  int64 param7 = 1;
+  int32 param7 = 1;
 }
 
 message Parameter2 {
-  int64 param8 = 1;
+  int32 param8 = 1;
 }
 
 //TestParameterQueryParameters holds parameters to TestParameterQuery

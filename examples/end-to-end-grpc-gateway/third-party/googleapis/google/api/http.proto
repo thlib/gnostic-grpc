@@ -105,7 +105,7 @@ message Http {
 //         string subfield = 1;
 //       }
 //       string message_id = 1; // mapped to the URL
-//       int64 revision = 2;    // becomes a parameter
+//       int32 revision = 2;    // becomes a parameter
 //       SubMessage sub = 3;    // `sub.subfield` becomes a parameter
 //     }
 //

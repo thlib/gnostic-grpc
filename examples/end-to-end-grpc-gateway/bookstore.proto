@@ -41,33 +41,33 @@ message CreateShelfParameters {
 }
 
 message GetShelfParameters {
-  int64 shelf = 1;
+  int32 shelf = 1;
 }
 
 message DeleteShelfParameters {
-  int64 shelf = 1;
+  int32 shelf = 1;
 }
 
 message ListBooksParameters {
-  int64 shelf = 1;
+  int32 shelf = 1;
 }
 
 message CreateBookParameters {
-  int64 shelf = 1;
+  int32 shelf = 1;
 
   Book book = 2;
 }
 
 message GetBookParameters {
-  int64 shelf = 1;
+  int32 shelf = 1;
 
-  int64 book = 2;
+  int32 book = 2;
 }
 
 message DeleteBookParameters {
-  int64 shelf = 1;
+  int32 shelf = 1;
 
-  int64 book = 2;
+  int32 book = 2;
 }
 
 service Bookstore {

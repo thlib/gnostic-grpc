@@ -13,9 +13,9 @@ import "parameters.proto";
 import "responses.proto";
 
 message Person {
-  int64 id = 1;
+  int32 id = 1;
 
-  int64 age = 2;
+  int32 age = 2;
 
   string name = 3;
 

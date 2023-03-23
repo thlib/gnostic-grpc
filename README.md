@@ -1,6 +1,8 @@
 This is a fork of https://github.com/google/gnostic-grpc with a difference:
-1. It does not do case conversion for the fields
+- It does not do case conversion for the fields
+- It uses `int32` instead of `int64`
 
+---
 
 [![Build Status](https://travis-ci.org/thlib/gnostic-grpc.svg?branch=master)](https://travis-ci.org/google/gnostic-grpc)
 [![Go Report Card](https://goreportcard.com/badge/github.com/thlib/gnostic-grpc)](https://goreportcard.com/report/github.com/thlib/gnostic-grpc)

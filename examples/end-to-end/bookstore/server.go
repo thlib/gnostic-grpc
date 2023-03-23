@@ -18,10 +18,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/golang/protobuf/ptypes/empty"
 	"log"
 	"net"
 	"sync"
+
+	"github.com/golang/protobuf/ptypes/empty"
 
 	"google.golang.org/grpc"
 )
@@ -38,10 +39,10 @@ const (
 type server struct {
 	// shelves are stored in a map keyed by shelf id
 	// books are stored in a two level map, keyed first by shelf id and then by book id
-	Shelves     map[int64]*Shelf
-	Books       map[int64]map[int64]*Book
-	LastShelfID int64      // the id of the last shelf that was added
-	LastBookID  int64      // the id of the last book that was added
+	Shelves     map[int32]*Shelf
+	Books       map[int32]map[int32]*Book
+	LastShelfID int32      // the id of the last shelf that was added
+	LastBookID  int32      // the id of the last book that was added
 	Mutex       sync.Mutex // global mutex to synchronize service access
 }
 
@@ -76,8 +77,8 @@ func (s *server) DeleteShelves(context.Context, *empty.Empty) (*empty.Empty, err
 	s.Mutex.Lock()
 	defer s.Mutex.Unlock()
 	// delete everything by reinitializing the Shelves and Books maps.
-	s.Shelves = make(map[int64]*Shelf)
-	s.Books = make(map[int64]map[int64]*Book)
+	s.Shelves = make(map[int32]*Shelf)
+	s.Books = make(map[int32]map[int32]*Book)
 	s.LastShelfID = 0
 	s.LastBookID = 0
 	return nil, nil
@@ -136,7 +137,7 @@ func (s *server) CreateBook(ctx context.Context, parameters *CreateBookParameter
 	bid := s.LastBookID
 	book := parameters.Book
 	if s.Books[parameters.Shelf] == nil {
-		s.Books[parameters.Shelf] = make(map[int64]*Book)
+		s.Books[parameters.Shelf] = make(map[int32]*Book)
 	}
 	s.Books[parameters.Shelf][bid] = book
 
@@ -164,7 +165,7 @@ func (s *server) DeleteBook(ctx context.Context, parameters *DeleteBookParameter
 }
 
 // internal helpers
-func (s *server) getShelf(sid int64) (shelf *Shelf, err error) {
+func (s *server) getShelf(sid int32) (shelf *Shelf, err error) {
 	shelf, ok := s.Shelves[sid]
 	if !ok {
 		return nil, errors.New(fmt.Sprintf("Couldn't find shelf %d", sid))
@@ -173,7 +174,7 @@ func (s *server) getShelf(sid int64) (shelf *Shelf, err error) {
 	}
 }
 
-func (s *server) getBook(sid int64, bid int64) (book *Book, err error) {
+func (s *server) getBook(sid int32, bid int32) (book *Book, err error) {
 	_, err = s.getShelf(sid)
 	if err != nil {
 		return nil, err
@@ -194,8 +195,8 @@ func RunServer() {
 	s := grpc.NewServer()
 	fmt.Printf("\nServer listening on port %v \n", port)
 	RegisterBookstoreServer(s, &server{
-		Shelves: map[int64]*Shelf{},
-		Books:   map[int64]map[int64]*Book{},
+		Shelves: map[int32]*Shelf{},
+		Books:   map[int32]map[int32]*Book{},
 	})
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)

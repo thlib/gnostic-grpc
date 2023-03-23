@@ -15,7 +15,6 @@
 package generator
 
 import (
-	"google.golang.org/protobuf/types/descriptorpb"
 	"log"
 	"os/exec"
 	"path"
@@ -23,6 +22,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"google.golang.org/protobuf/types/descriptorpb"
 
 	"github.com/golang/protobuf/descriptor"
 	"github.com/golang/protobuf/proto"
@@ -611,8 +612,8 @@ func getProtobufTypes() map[string]dpb.FieldDescriptorProto_Type {
 	typeMapping := make(map[string]dpb.FieldDescriptorProto_Type)
 	typeMapping["double"] = dpb.FieldDescriptorProto_TYPE_DOUBLE
 	typeMapping["float"] = dpb.FieldDescriptorProto_TYPE_FLOAT
-	typeMapping["int64"] = dpb.FieldDescriptorProto_TYPE_INT64
-	typeMapping["uint64"] = dpb.FieldDescriptorProto_TYPE_UINT64
+	typeMapping["int32"] = dpb.FieldDescriptorProto_TYPE_int32
+	typeMapping["uint32"] = dpb.FieldDescriptorProto_TYPE_Uint32
 	typeMapping["int32"] = dpb.FieldDescriptorProto_TYPE_INT32
 	typeMapping["fixed64"] = dpb.FieldDescriptorProto_TYPE_FIXED64
 
@@ -624,7 +625,7 @@ func getProtobufTypes() map[string]dpb.FieldDescriptorProto_Type {
 	typeMapping["sfixed32"] = dpb.FieldDescriptorProto_TYPE_SFIXED32
 	typeMapping["sfixed64"] = dpb.FieldDescriptorProto_TYPE_SFIXED64
 	typeMapping["sint32"] = dpb.FieldDescriptorProto_TYPE_SINT32
-	typeMapping["sint64"] = dpb.FieldDescriptorProto_TYPE_SINT64
+	typeMapping["sint32"] = dpb.FieldDescriptorProto_TYPE_Sint32
 	return typeMapping
 }
 

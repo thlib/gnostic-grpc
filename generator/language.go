@@ -72,10 +72,10 @@ func findNativeType(fType string, fFormat string) string {
 		switch fFormat {
 		case "int32":
 			return "int32"
-		case "int64":
-			return "int64"
+		case "int32":
+			return "int32"
 		default:
-			return "int64"
+			return "int32"
 		}
 	case "object":
 		return "message"
@@ -108,7 +108,7 @@ func findNativeType(fType string, fFormat string) string {
 			mapType := fType[11:]
 			formattedType := map[string]bool{
 				"int32": true,
-				"int64": true,
+				"int32": true,
 			}
 			if !formattedType[mapType] {
 				return "map[string]" + findNativeType(mapType, "")

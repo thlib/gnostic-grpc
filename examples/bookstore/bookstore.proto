@@ -41,33 +41,33 @@ message CreateShelfRequest {
 }
 
 message GetShelfRequest {
-  int64 shelf = 1;
+  int32 shelf = 1;
 }
 
 message DeleteShelfRequest {
-  int64 shelf = 1;
+  int32 shelf = 1;
 }
 
 message ListBooksRequest {
-  int64 shelf = 1;
+  int32 shelf = 1;
 }
 
 message CreateBookRequest {
-  int64 shelf = 1;
+  int32 shelf = 1;
 
   Book book = 2;
 }
 
 message GetBookRequest {
-  int64 shelf = 1;
+  int32 shelf = 1;
 
-  int64 book = 2;
+  int32 book = 2;
 }
 
 message DeleteBookRequest {
-  int64 shelf = 1;
+  int32 shelf = 1;
 
-  int64 book = 2;
+  int32 book = 2;
 }
 
 service Bookstore {
