@@ -80,7 +80,7 @@ func request_Bookstore_GetShelf_0(ctx context.Context, marshaler runtime.Marshal
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "shelf")
 	}
 
-	protoReq.Shelf, err = runtime.Int64(val)
+	protoReq.Shelf, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "shelf", err)
@@ -107,7 +107,7 @@ func request_Bookstore_DeleteShelf_0(ctx context.Context, marshaler runtime.Mars
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "shelf")
 	}
 
-	protoReq.Shelf, err = runtime.Int64(val)
+	protoReq.Shelf, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "shelf", err)
@@ -134,7 +134,7 @@ func request_Bookstore_ListBooks_0(ctx context.Context, marshaler runtime.Marsha
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "shelf")
 	}
 
-	protoReq.Shelf, err = runtime.Int64(val)
+	protoReq.Shelf, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "shelf", err)
@@ -169,7 +169,7 @@ func request_Bookstore_CreateBook_0(ctx context.Context, marshaler runtime.Marsh
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "shelf")
 	}
 
-	protoReq.Shelf, err = runtime.Int64(val)
+	protoReq.Shelf, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "shelf", err)
@@ -196,7 +196,7 @@ func request_Bookstore_GetBook_0(ctx context.Context, marshaler runtime.Marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "shelf")
 	}
 
-	protoReq.Shelf, err = runtime.Int64(val)
+	protoReq.Shelf, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "shelf", err)
@@ -207,7 +207,7 @@ func request_Bookstore_GetBook_0(ctx context.Context, marshaler runtime.Marshale
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "book")
 	}
 
-	protoReq.Book, err = runtime.Int64(val)
+	protoReq.Book, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "book", err)
@@ -234,7 +234,7 @@ func request_Bookstore_DeleteBook_0(ctx context.Context, marshaler runtime.Marsh
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "shelf")
 	}
 
-	protoReq.Shelf, err = runtime.Int64(val)
+	protoReq.Shelf, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "shelf", err)
@@ -245,7 +245,7 @@ func request_Bookstore_DeleteBook_0(ctx context.Context, marshaler runtime.Marsh
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "book")
 	}
 
-	protoReq.Book, err = runtime.Int64(val)
+	protoReq.Book, err = runtime.Int32(val)
 
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "book", err)

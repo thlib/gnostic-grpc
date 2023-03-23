@@ -160,7 +160,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '200':
           description: successful operation
@@ -189,7 +189,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '405':
           description: Invalid input
@@ -226,7 +226,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '400':
           description: Invalid ID supplied
@@ -249,7 +249,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '200':
           description: successful operation
@@ -327,7 +327,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
             minimum: 1
             maximum: 10
       responses:
@@ -359,7 +359,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
             minimum: 1
       responses:
         '400':
@@ -536,10 +536,10 @@ components:
       properties:
         id:
           type: integer
-          format: int64
+          format: int32
         petId:
           type: integer
-          format: int64
+          format: int32
         quantity:
           type: integer
           format: int32
@@ -563,7 +563,7 @@ components:
       properties:
         id:
           type: integer
-          format: int64
+          format: int32
         name:
           type: string
       xml:
@@ -573,7 +573,7 @@ components:
       properties:
         id:
           type: integer
-          format: int64
+          format: int32
         username:
           type: string
         firstName:
@@ -597,7 +597,7 @@ components:
       properties:
         id:
           type: integer
-          format: int64
+          format: int32
         name:
           type: string
       xml:
@@ -610,7 +610,7 @@ components:
       properties:
         id:
           type: integer
-          format: int64
+          format: int32
         category:
           $ref: '#/components/schemas/Category'
         name:

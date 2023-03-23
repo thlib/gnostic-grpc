@@ -15,9 +15,9 @@ message Error {
 }
 
 message Person {
-  int64 id = 1;
+  int32 id = 1;
 
-  int64 age = 2;
+  int32 age = 2;
 
   string name = 3;
 
@@ -25,24 +25,34 @@ message Person {
 }
 
 service Responses {
-  rpc TestResponseNative ( google.protobuf.Empty ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { get:"/testResponseNative"  };
+  rpc TestResponseNative(google.protobuf.Empty)
+      returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      get : "/testResponseNative"
+    };
   }
 
-  rpc TestResponseReference ( google.protobuf.Empty ) returns ( Person ) {
-    option (google.api.http) = { get:"/testResponseReference"  };
+  rpc TestResponseReference(google.protobuf.Empty) returns (Person) {
+    option (google.api.http) = {
+      get : "/testResponseReference"
+    };
   }
 
-  rpc TestResponseMultipleContent ( google.protobuf.Empty ) returns ( Person ) {
-    option (google.api.http) = { get:"/testResponseMultipleContent"  };
+  rpc TestResponseMultipleContent(google.protobuf.Empty) returns (Person) {
+    option (google.api.http) = {
+      get : "/testResponseMultipleContent"
+    };
   }
 
-  rpc TestResponse400StatusCode ( google.protobuf.Empty ) returns ( Error ) {
-    option (google.api.http) = { get:"/testResponse400StatusCode"  };
+  rpc TestResponse400StatusCode(google.protobuf.Empty) returns (Error) {
+    option (google.api.http) = {
+      get : "/testResponse400StatusCode"
+    };
   }
 
-  rpc TestResponseComponentReference ( google.protobuf.Empty ) returns ( Person ) {
-    option (google.api.http) = { get:"/testResponseComponentReference"  };
+  rpc TestResponseComponentReference(google.protobuf.Empty) returns (Person) {
+    option (google.api.http) = {
+      get : "/testResponseComponentReference"
+    };
   }
 }
-

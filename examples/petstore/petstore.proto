@@ -9,9 +9,9 @@ import "google/protobuf/descriptor.proto";
 import "google/protobuf/empty.proto";
 
 message Order {
-  int64 id = 1;
+  int32 id = 1;
 
-  int64 pet_id = 2;
+  int32 pet_id = 2;
 
   int32 quantity = 3;
 
@@ -31,13 +31,13 @@ message Order {
 }
 
 message Category {
-  int64 id = 1;
+  int32 id = 1;
 
   string name = 2;
 }
 
 message User {
-  int64 id = 1;
+  int32 id = 1;
 
   string username = 2;
 
@@ -55,13 +55,13 @@ message User {
 }
 
 message Tag {
-  int64 id = 1;
+  int32 id = 1;
 
   string name = 2;
 }
 
 message Pet {
-  int64 id = 1;
+  int32 id = 1;
 
   Category category = 2;
 
@@ -90,13 +90,9 @@ message ApiResponse {
   string message = 3;
 }
 
-message UpdatePetRequest {
-  Pet pet = 1;
-}
+message UpdatePetRequest { Pet pet = 1; }
 
-message AddPetRequest {
-  Pet pet = 1;
-}
+message AddPetRequest { Pet pet = 1; }
 
 message FindPetsByStatusRequest {
   repeated Status status = 1;
@@ -110,13 +106,9 @@ message FindPetsByStatusRequest {
   }
 }
 
-message FindPetsByTagsRequest {
-  repeated string tags = 1;
-}
+message FindPetsByTagsRequest { repeated string tags = 1; }
 
-message GetPetByIdRequest {
-  int64 pet_id = 1;
-}
+message GetPetByIdRequest { int32 pet_id = 1; }
 
 message UpdatePetWithFormRequestBodyapplicationXWwwFormUrlencoded {
   string name = 1;
@@ -125,50 +117,37 @@ message UpdatePetWithFormRequestBodyapplicationXWwwFormUrlencoded {
 }
 
 message UpdatePetWithFormRequest {
-  int64 pet_id = 1;
+  int32 pet_id = 1;
 
-  UpdatePetWithFormRequestBodyapplicationXWwwFormUrlencoded application_x_www_form_urlencoded = 2;
+  UpdatePetWithFormRequestBodyapplicationXWwwFormUrlencoded
+      application_x_www_form_urlencoded = 2;
 }
 
 message DeletePetRequest {
   string api_key = 1;
 
-  int64 pet_id = 2;
+  int32 pet_id = 2;
 }
 
 message UploadFileRequest {
-  int64 pet_id = 1;
+  int32 pet_id = 1;
 
   string application_octet_stream = 2;
 }
 
-message GetInventoryOK {
-  map<string, int32> additional_properties = 1;
-}
+message GetInventoryOK { map<string, int32> additional_properties = 1; }
 
-message PlaceOrderRequest {
-  Order order = 1;
-}
+message PlaceOrderRequest { Order order = 1; }
 
-message GetOrderByIdRequest {
-  int64 order_id = 1;
-}
+message GetOrderByIdRequest { int32 order_id = 1; }
 
-message DeleteOrderRequest {
-  int64 order_id = 1;
-}
+message DeleteOrderRequest { int32 order_id = 1; }
 
-message CreateUserRequest {
-  User user = 1;
-}
+message CreateUserRequest { User user = 1; }
 
-message CreateUsersWithArrayInputRequest {
-  User user = 1;
-}
+message CreateUsersWithArrayInputRequest { User user = 1; }
 
-message CreateUsersWithListInputRequest {
-  User user = 1;
-}
+message CreateUsersWithListInputRequest { User user = 1; }
 
 message LoginUserRequest {
   string username = 1;
@@ -176,9 +155,7 @@ message LoginUserRequest {
   string password = 2;
 }
 
-message GetUserByNameRequest {
-  string username = 1;
-}
+message GetUserByNameRequest { string username = 1; }
 
 message UpdateUserRequest {
   string username = 1;
@@ -186,89 +163,138 @@ message UpdateUserRequest {
   User user = 2;
 }
 
-message DeleteUserRequest {
-  string username = 1;
-}
+message DeleteUserRequest { string username = 1; }
 
 service Petstore {
-  rpc UpdatePet ( UpdatePetRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { put:"/pet" body:"pet"  };
+  rpc UpdatePet(UpdatePetRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put : "/pet"
+      body : "pet"
+    };
   }
 
-  rpc AddPet ( AddPetRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { post:"/pet" body:"pet"  };
+  rpc AddPet(AddPetRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/pet"
+      body : "pet"
+    };
   }
 
-  rpc FindPetsByStatus ( FindPetsByStatusRequest ) returns ( Pet ) {
-    option (google.api.http) = { get:"/pet/findByStatus"  };
+  rpc FindPetsByStatus(FindPetsByStatusRequest) returns (Pet) {
+    option (google.api.http) = {
+      get : "/pet/findByStatus"
+    };
   }
 
-  rpc FindPetsByTags ( FindPetsByTagsRequest ) returns ( Pet ) {
-    option (google.api.http) = { get:"/pet/findByTags"  };
+  rpc FindPetsByTags(FindPetsByTagsRequest) returns (Pet) {
+    option (google.api.http) = {
+      get : "/pet/findByTags"
+    };
   }
 
-  rpc GetPetById ( GetPetByIdRequest ) returns ( Pet ) {
-    option (google.api.http) = { get:"/pet/{petId}"  };
+  rpc GetPetById(GetPetByIdRequest) returns (Pet) {
+    option (google.api.http) = {
+      get : "/pet/{petId}"
+    };
   }
 
-  rpc UpdatePetWithForm ( UpdatePetWithFormRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { post:"/pet/{petId}" body:"application_x_www_form_urlencoded"  };
+  rpc UpdatePetWithForm(UpdatePetWithFormRequest)
+      returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/pet/{petId}"
+      body : "application_x_www_form_urlencoded"
+    };
   }
 
-  rpc DeletePet ( DeletePetRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { delete:"/pet/{petId}"  };
+  rpc DeletePet(DeletePetRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/pet/{petId}"
+    };
   }
 
-  rpc UploadFile ( UploadFileRequest ) returns ( ApiResponse ) {
-    option (google.api.http) = { post:"/pet/{petId}/uploadImage" body:"application_octet_stream"  };
+  rpc UploadFile(UploadFileRequest) returns (ApiResponse) {
+    option (google.api.http) = {
+      post : "/pet/{petId}/uploadImage"
+      body : "application_octet_stream"
+    };
   }
 
-  rpc GetInventory ( google.protobuf.Empty ) returns ( GetInventoryOK ) {
-    option (google.api.http) = { get:"/store/inventory"  };
+  rpc GetInventory(google.protobuf.Empty) returns (GetInventoryOK) {
+    option (google.api.http) = {
+      get : "/store/inventory"
+    };
   }
 
-  rpc PlaceOrder ( PlaceOrderRequest ) returns ( Order ) {
-    option (google.api.http) = { post:"/store/order" body:"order"  };
+  rpc PlaceOrder(PlaceOrderRequest) returns (Order) {
+    option (google.api.http) = {
+      post : "/store/order"
+      body : "order"
+    };
   }
 
-  rpc GetOrderById ( GetOrderByIdRequest ) returns ( Order ) {
-    option (google.api.http) = { get:"/store/order/{orderId}"  };
+  rpc GetOrderById(GetOrderByIdRequest) returns (Order) {
+    option (google.api.http) = {
+      get : "/store/order/{orderId}"
+    };
   }
 
-  rpc DeleteOrder ( DeleteOrderRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { delete:"/store/order/{orderId}"  };
+  rpc DeleteOrder(DeleteOrderRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/store/order/{orderId}"
+    };
   }
 
-  rpc CreateUser ( CreateUserRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { post:"/user" body:"user"  };
+  rpc CreateUser(CreateUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/user"
+      body : "user"
+    };
   }
 
-  rpc CreateUsersWithArrayInput ( CreateUsersWithArrayInputRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { post:"/user/createWithArray" body:"user"  };
+  rpc CreateUsersWithArrayInput(CreateUsersWithArrayInputRequest)
+      returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/user/createWithArray"
+      body : "user"
+    };
   }
 
-  rpc CreateUsersWithListInput ( CreateUsersWithListInputRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { post:"/user/createWithList" body:"user"  };
+  rpc CreateUsersWithListInput(CreateUsersWithListInputRequest)
+      returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post : "/user/createWithList"
+      body : "user"
+    };
   }
 
-  rpc LoginUser ( LoginUserRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { get:"/user/login"  };
+  rpc LoginUser(LoginUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      get : "/user/login"
+    };
   }
 
-  rpc LogoutUser ( google.protobuf.Empty ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { get:"/user/logout"  };
+  rpc LogoutUser(google.protobuf.Empty) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      get : "/user/logout"
+    };
   }
 
-  rpc GetUserByName ( GetUserByNameRequest ) returns ( User ) {
-    option (google.api.http) = { get:"/user/{username}"  };
+  rpc GetUserByName(GetUserByNameRequest) returns (User) {
+    option (google.api.http) = {
+      get : "/user/{username}"
+    };
   }
 
-  rpc UpdateUser ( UpdateUserRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { put:"/user/{username}" body:"user"  };
+  rpc UpdateUser(UpdateUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      put : "/user/{username}"
+      body : "user"
+    };
   }
 
-  rpc DeleteUser ( DeleteUserRequest ) returns ( google.protobuf.Empty ) {
-    option (google.api.http) = { delete:"/user/{username}"  };
+  rpc DeleteUser(DeleteUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete : "/user/{username}"
+    };
   }
 }
-

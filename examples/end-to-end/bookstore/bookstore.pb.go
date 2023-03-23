@@ -294,7 +294,7 @@ func (m *CreateShelfParameters) GetShelf() *Shelf {
 }
 
 type GetShelfParameters struct {
-	Shelf                int64    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
+	Shelf                int32    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -325,7 +325,7 @@ func (m *GetShelfParameters) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetShelfParameters proto.InternalMessageInfo
 
-func (m *GetShelfParameters) GetShelf() int64 {
+func (m *GetShelfParameters) GetShelf() int32 {
 	if m != nil {
 		return m.Shelf
 	}
@@ -333,7 +333,7 @@ func (m *GetShelfParameters) GetShelf() int64 {
 }
 
 type DeleteShelfParameters struct {
-	Shelf                int64    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
+	Shelf                int32    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -364,7 +364,7 @@ func (m *DeleteShelfParameters) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DeleteShelfParameters proto.InternalMessageInfo
 
-func (m *DeleteShelfParameters) GetShelf() int64 {
+func (m *DeleteShelfParameters) GetShelf() int32 {
 	if m != nil {
 		return m.Shelf
 	}
@@ -372,7 +372,7 @@ func (m *DeleteShelfParameters) GetShelf() int64 {
 }
 
 type ListBooksParameters struct {
-	Shelf                int64    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
+	Shelf                int32    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -403,7 +403,7 @@ func (m *ListBooksParameters) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ListBooksParameters proto.InternalMessageInfo
 
-func (m *ListBooksParameters) GetShelf() int64 {
+func (m *ListBooksParameters) GetShelf() int32 {
 	if m != nil {
 		return m.Shelf
 	}
@@ -411,7 +411,7 @@ func (m *ListBooksParameters) GetShelf() int64 {
 }
 
 type CreateBookParameters struct {
-	Shelf                int64    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
+	Shelf                int32    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
 	Book                 *Book    `protobuf:"bytes,2,opt,name=book,proto3" json:"book,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -443,7 +443,7 @@ func (m *CreateBookParameters) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_CreateBookParameters proto.InternalMessageInfo
 
-func (m *CreateBookParameters) GetShelf() int64 {
+func (m *CreateBookParameters) GetShelf() int32 {
 	if m != nil {
 		return m.Shelf
 	}
@@ -458,8 +458,8 @@ func (m *CreateBookParameters) GetBook() *Book {
 }
 
 type GetBookParameters struct {
-	Shelf                int64    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
-	Book                 int64    `protobuf:"varint,2,opt,name=book,proto3" json:"book,omitempty"`
+	Shelf                int32    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
+	Book                 int32    `protobuf:"varint,2,opt,name=book,proto3" json:"book,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -490,14 +490,14 @@ func (m *GetBookParameters) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_GetBookParameters proto.InternalMessageInfo
 
-func (m *GetBookParameters) GetShelf() int64 {
+func (m *GetBookParameters) GetShelf() int32 {
 	if m != nil {
 		return m.Shelf
 	}
 	return 0
 }
 
-func (m *GetBookParameters) GetBook() int64 {
+func (m *GetBookParameters) GetBook() int32 {
 	if m != nil {
 		return m.Book
 	}
@@ -505,8 +505,8 @@ func (m *GetBookParameters) GetBook() int64 {
 }
 
 type DeleteBookParameters struct {
-	Shelf                int64    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
-	Book                 int64    `protobuf:"varint,2,opt,name=book,proto3" json:"book,omitempty"`
+	Shelf                int32    `protobuf:"varint,1,opt,name=shelf,proto3" json:"shelf,omitempty"`
+	Book                 int32    `protobuf:"varint,2,opt,name=book,proto3" json:"book,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -537,14 +537,14 @@ func (m *DeleteBookParameters) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DeleteBookParameters proto.InternalMessageInfo
 
-func (m *DeleteBookParameters) GetShelf() int64 {
+func (m *DeleteBookParameters) GetShelf() int32 {
 	if m != nil {
 		return m.Shelf
 	}
 	return 0
 }
 
-func (m *DeleteBookParameters) GetBook() int64 {
+func (m *DeleteBookParameters) GetBook() int32 {
 	if m != nil {
 		return m.Book
 	}

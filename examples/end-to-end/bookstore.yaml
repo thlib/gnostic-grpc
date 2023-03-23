@@ -53,7 +53,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '200':
           description: A shelf resource.
@@ -77,7 +77,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         default:
           description: An empty response body.
@@ -92,7 +92,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '200':
           description: List of books on the specified shelf.
@@ -116,7 +116,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '200':
           description: A newly created book resource.
@@ -148,14 +148,14 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
         - description: ID of the book to get from the shelf.
           in: path
           name: book
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         '200':
           description: A book resource.
@@ -179,14 +179,14 @@ paths:
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
         - description: ID of the book to delete from the shelf.
           in: path
           name: book
           required: true
           schema:
             type: integer
-            format: int64
+            format: int32
       responses:
         default:
           description: An empty response body.
