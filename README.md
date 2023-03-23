@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/google/gnostic-grpc.svg?branch=master)](https://travis-ci.org/google/gnostic-grpc)
-[![Go Report Card](https://goreportcard.com/badge/github.com/google/gnostic-grpc)](https://goreportcard.com/report/github.com/google/gnostic-grpc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/thlib/gnostic-grpc)](https://goreportcard.com/report/github.com/thlib/gnostic-grpc)
 [![Test Coverage](https://codecov.io/gh/google/gnostic-grpc/branch/master/graph/badge.svg)](https://codecov.io/gh/google)
 
 # gnostic gRPC plugin
@@ -22,7 +22,7 @@ data. Then [protoreflect](https://github.com/jhump/protoreflect/) is used to pri
 Install gnostic and the plugin:
     
     go get -u github.com/google/gnostic
-    go get -u github.com/google/gnostic-grpc
+    go get -u github.com/thlib/gnostic-grpc
 
 Run gnostic with the plugin:
 
@@ -31,7 +31,7 @@ Run gnostic with the plugin:
 This generates the gRPC service definition `examples/bookstore/bookstore.proto`.
 
 ## End-to-end example
-This [directory](https://github.com/google/gnostic-grpc/tree/master/examples/end-to-end) contains a tutorial on how to build a gRPC service that implements an OpenAPI specification.
+This [directory](https://github.com/thlib/gnostic-grpc/tree/master/examples/end-to-end) contains a tutorial on how to build a gRPC service that implements an OpenAPI specification.
 
 ## What conversions are currently supported?
 

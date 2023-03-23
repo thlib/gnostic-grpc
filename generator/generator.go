@@ -495,7 +495,7 @@ func getNamesOfDependenciesThatWillBeImported(dependencies []*dpb.FileDescriptor
 	// At last, we need to add the dependencies to the FileDescriptorProto in order to get them rendered.
 	for _, fd := range dependencies {
 		if isEmptyDependency(*fd.Name) && shouldAddEmptyDependency(methods) {
-			// Reference: https://github.com/googleapis/gnostic-grpc/issues/8
+			// Reference: https://github.com/thlib/gnostic-grpc/issues/8
 			names = append(names, *fd.Name)
 			continue
 		}
@@ -629,7 +629,7 @@ func getProtobufTypes() map[string]dpb.FieldDescriptorProto_Type {
 }
 
 // findValidServiceName finds a valid service name for the gRPC service. A valid service name is not already taken by a
-// message. Reference: https://github.com/googleapis/gnostic-grpc/issues/7
+// message. Reference: https://github.com/thlib/gnostic-grpc/issues/7
 func findValidServiceName(messages []*dpb.DescriptorProto, serviceName string) string {
 	messageNames := make(map[string]bool)
 

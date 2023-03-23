@@ -15,13 +15,14 @@
 package generator
 
 import (
-	surface "github.com/googleapis/gnostic/surface"
 	"io/ioutil"
 	"os"
 	"path"
 	"path/filepath"
 	"strings"
 	"testing"
+
+	surface "github.com/googleapis/gnostic/surface"
 )
 
 const (
