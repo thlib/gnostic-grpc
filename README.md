@@ -1,6 +1,10 @@
-[![Build Status](https://travis-ci.org/google/gnostic-grpc.svg?branch=master)](https://travis-ci.org/google/gnostic-grpc)
+This is a fork of https://github.com/google/gnostic-grpc with a difference:
+1. It does not do case conversion for the fields
+
+
+[![Build Status](https://travis-ci.org/thlib/gnostic-grpc.svg?branch=master)](https://travis-ci.org/google/gnostic-grpc)
 [![Go Report Card](https://goreportcard.com/badge/github.com/thlib/gnostic-grpc)](https://goreportcard.com/report/github.com/thlib/gnostic-grpc)
-[![Test Coverage](https://codecov.io/gh/google/gnostic-grpc/branch/master/graph/badge.svg)](https://codecov.io/gh/google)
+[![Test Coverage](https://codecov.io/gh/thlib/gnostic-grpc/branch/master/graph/badge.svg)](https://codecov.io/gh/google)
 
 # gnostic gRPC plugin
 [GSoC 2019 project](https://summerofcode.withgoogle.com/archive/2019/projects/5019228334194688/)
